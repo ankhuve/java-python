@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class NextNumber {
+
+	public static void main( String[] args ){
+		Scanner scan = new Scanner(System.in);
+		int[] array;
+		System.err.print("Mata in n: ");
+		int n = scan.nextInt();
+		array = new int[n];
+		boolean check = false;
+		int possible_b = 0;
+		int possible_c = 0;
+
+		for (int i=0; n>i ;i++) {
+			int s = scan.nextInt();
+			array[i] = s;
+		}
+		
+		outer: for (int i=0; n>i ;i++) {
+			check = false;
+			System.out.println("Checking" + array[i]);
+			if(!check){
+				inner: for (int c=-9; c<=9; c++){
+					for(int b=-9; b<=9; b++){
+						if (array[i]*b+c==array[i+1]){
+							check = true; // found a solution, try next number with the same
+							possible_b = b;
+							possible_c = c;
+							if(array[i+1]==array[n]){ // we're on the last one
+								break outer;
+							} else{
+								break inner;
+							}
+						} else{
+							check = false; // didn't solve, continue checking
+						}
+					}
+				}
+			}
+		}
+		if (check){ // we have a solution
+			System.out.println(array[-1]*possible_b+possible_c);
+		} else{
+			System.out.println("no");
+		}
+	}
+}
