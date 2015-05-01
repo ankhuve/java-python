@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class TalSpiral {
+
+	private static Scanner scan;
+
+	public static void main( String[] args ){
+		scan = new Scanner(System.in);
+		int n = scan.nextInt();
+//		int k = scan.nextInt();
+		int previousSqrt = (int)Math.floor(Math.sqrt(n));
+		int perfectSquare = previousSqrt*previousSqrt;
+		int evenOrOdd = 1; // odd means the square ended in top right corner
+		if (perfectSquare%2==0){ // the perfect square ended in the bottom left
+			evenOrOdd = 0;
+		}
+		int diffFromPerfect = n-perfectSquare;
+		int rows = previousSqrt;
+		int cols = previousSqrt;
+		System.out.println(previousSqrt + " " + perfectSquare + " " + diffFromPerfect);
+		if (diffFromPerfect==1 && evenOrOdd==1){ // number stopped in top right corner: no additional rows, one additional column
+			System.out.println("Lägger till en ny kolumn till höger");
+			System.out.println("1" + " " + (previousSqrt+1));
+			cols++;
+		} else if (diffFromPerfect==1 && evenOrOdd==0){ // number stopped in bottom left corner: no additional rows, one additional column
+			System.out.println("Lägger till en ny kolumn till vänster");
+			System.out.println("1" + " " + (previousSqrt+1));
+			cols++;
+		} else if(diffFromPerfect<previousSqrt){ // number stopped on first side, no additional rows but one more col
+			cols++;
+		} else { // number went into a new row
+			cols++;
+			rows++;
+		}
+		System.out.println("Rows: "+rows + " Cols: " + cols);
+	}
+}

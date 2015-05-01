@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class TalSpiral {
+
+	private static Scanner scan;
+
+	public static void main( String[] args ){
+		scan = new Scanner(System.in);
+		int n = scan.nextInt();
+//		int k = scan.nextInt();
+		int previousSqrt = (int)Math.floor(Math.sqrt(n));
+		int perfectSquare = previousSqrt*previousSqrt;
+		int evenOrOdd = 1; // odd means the square ended in top right corner
+		if (perfectSquare%2==0){ // the perfect square ended in the bottom left
+			evenOrOdd = 0;
+		}
+		int diffFromPerfect = n-perfectSquare;
+		
+		// Calculate how many rows and columns the "square" consists of
+		int rows = previousSqrt;
+		int cols = previousSqrt;
+		int lastRow = 0; // 0 == last row we add is on top of the square, 1 == under
+		int lastCol = 0; // 0 == last column we add is to the left of the square, 1 == to the right
+		System.out.println(previousSqrt + " " + perfectSquare + " " + diffFromPerfect);
+		if (diffFromPerfect!=0){
+			if (diffFromPerfect==1 && evenOrOdd==1){ // number stopped in top right corner: no additional rows, one additional column
+				System.out.println("Lägger till en ny kolumn till höger");
+				System.out.println("1" + " " + (previousSqrt+1));
+				cols++;
+				lastCol = 1;
+			} else if (diffFromPerfect==1 && evenOrOdd==0){ // number stopped in bottom left corner: no additional rows, one additional column
+				System.out.println("Lägger till en ny kolumn till vänster");
+				System.out.println("1" + " " + (previousSqrt+1));
+				cols++;
+			} else if(diffFromPerfect<=previousSqrt && evenOrOdd==0){ // number stopped on left side, no additional rows but one more col
+				System.out.println("Lägger till en ny kolumn till vänster");
+				cols++;
+			} else if(diffFromPerfect<=previousSqrt && evenOrOdd==1){ // number stopped on left side, no additional rows but one more col
+				System.out.println("Lägger till en ny kolumn till höger");
+				cols++;
+				lastCol = 1;
+			} else if(evenOrOdd==0){ // number went into a new row == we add both a col and a row
+				System.out.println("Lägger till en ny rad ovanför och en kolumn till vänster");
+				cols++;
+				rows++;
+			} else { // number went into a new row == we add both a col and a row
+				System.out.println("Lägger till en ny rad under och en kolumn till höger");
+				cols++;
+				rows++;
+				lastCol = 1;
+				lastRow = 1;
+			}
+		}
+		System.out.println("Rows: "+rows + " Cols: " + cols); // we now know how big the n-square is
+	}
+}

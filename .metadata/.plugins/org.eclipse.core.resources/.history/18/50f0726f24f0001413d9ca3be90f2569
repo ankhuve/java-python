@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class TalSpiral {
+
+	public static void main( String[] args ){
+		Scanner scan = new Scanner(System.in);
+		int[] array;
+		int n = scan.nextInt();
+		int close
+//		int k = scan.nextInt();
+		array = new int[n];
+		System.out.println(int(Math.floor(Math.sqrt(n))));
+		
+//		while(!closestSquareFound){
+//			for (int i=1; i<n; i++){
+//			}
+//		}
+
+	}
+}

@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class TalSpiral {
+
+	public static void main( String[] args ){
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int previousSqrt = (int)Math.floor(Math.sqrt(n));
+		int perfectSquare = previousSqrt*previousSqrt;
+		int diffFromPerfect = n-perfectSquare;
+		System.out.println(previousSqrt + " " + perfectSquare + " " + diffFromPerfect);
+
+	}
+}

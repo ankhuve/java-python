@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class TalSpiral {
+
+	public static void main( String[] args ){
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+//		int k = scan.nextInt();
+		int previousSqrt = (int)Math.floor(Math.sqrt(n));
+		int perfectSquare = previousSqrt*previousSqrt;
+		int diffFromPerfect = n-perfectSquare;
+		int rows = previousSqrt;
+		int cols = previousSqrt;
+		System.out.println(previousSqrt + " " + perfectSquare + " " + diffFromPerfect);
+		if (diffFromPerfect==1){ // number in top right corner: row 1, column previousSquare+1
+			System.out.println("1" + " " + (previousSqrt+1));
+		} elif (diffFromPerfect<previousSqrt){ // we have no additional rows, only one additional column
+			cols++;
+		}
+	}
+}
