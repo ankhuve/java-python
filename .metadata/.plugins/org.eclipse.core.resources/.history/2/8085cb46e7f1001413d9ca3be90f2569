@@ -111,16 +111,16 @@ public class TalSpiral {
 		// find the correct column
 		if(cols%2==1){ // uneven number of cols means that we started the last col to the left
 			if(k_cols%2==1){ // this means that the k-square is centered horizontally
-				correctCol = (c)+(k_col);
+				correctCol = ((cols-k_cols)/2)+(k_col);
 			} else{ // this means that the k-square is shifted one col to the right
-				correctCol = (c)+(k_col+1);
+				correctCol = ((cols-k_cols)/2)+(k_col+1);
 			}
 			
 		} else{ // even number of cols means that the last col is on the right
 			if(k_cols%2==1){ // // middle is shifted one row to the left
-				correctCol = (c)+(k_col);
+				correctCol = ((cols-k_cols)/2)+(k_col);
 			} else{ // this means that the k-square is centered horizontally
-				correctCol = (c)+(k_col);
+				correctCol = ((cols-k_cols)/2)+(k_col);
 			}
 		}
 		
