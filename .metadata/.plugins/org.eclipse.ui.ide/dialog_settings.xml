@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
 		<item value="true" key="ShowStatusLine"/>
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode/&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
@@ -12,5 +13,13 @@
 			<item value="180" key="DIALOG_X_ORIGIN"/>
 			<item value="207" key="DIALOG_Y_ORIGIN"/>
 		</section>
+=======
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="1133" key="DIALOG_X_ORIGIN"/>
+		<item value="288" key="DIALOG_Y_ORIGIN"/>
+>>>>>>> origin/master
 	</section>
 </section>
